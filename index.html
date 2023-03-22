@@ -32,16 +32,16 @@
         </div>
 
         <div class="mt-2">
-          <button class="btn cal-btn">DEG</button>
-          <button class="btn cal-btn">F-E</button>
+          <button class="btn cal-btn" id="unit" data-input="unit">DEG</button>
+          <button class="btn cal-btn" data-input="fe">F-E</button>
         </div>
 
         <div class="mt-2 d-flex justify-content-center">
-          <button class="btn cal-btn fw-bold">MC</button>
-          <button class="btn cal-btn fw-bold">MR</button>
-          <button class="btn cal-btn fw-bold">M+</button>
-          <button class="btn cal-btn fw-bold">M-</button>
-          <button class="btn cal-btn fw-bold">MS</button>
+          <button class="btn cal-btn fw-bold" data-input="mc">MC</button>
+          <button class="btn cal-btn fw-bold" data-input="mr">MR</button>
+          <button class="btn cal-btn fw-bold" data-input="m+">M+</button>
+          <button class="btn cal-btn fw-bold" data-input="m-">M-</button>
+          <button class="btn cal-btn fw-bold" data-input="ms">MS</button>
         </div>
 
         <div class="d-flex">
@@ -66,85 +66,85 @@
             <ul class="dropdown-menu p-0">
               <!--2nd trigonometry area-->
               <li class="d-flex justify-content-around">
-                <button class="btn trig-btn btn-light" id="second-fn-Trigono">
+                <button class="btn trig-btn btn-light" id="second-fn-Trigono" data-input="second-fn-Trigono">
                   2 <sup>nd</sup>
                 </button>
-                <button class="btn trig-btn btn-light" id="sin">
+                <button class="btn trig-btn btn-light trigono-btn trigono-h-btn" id="sin" data-input="sin">
                   sin
                 </button>
-                <button class="btn trig-btn btn-light d-none" id="sinin">
+                <button class="btn trig-btn btn-light trigono-btn trigono-h-inv d-none" id="sinin" data-input="sinin">
                   sin <sup>-1</sup>
                 </button>
-                <button class="btn trig-btn btn-light d-none" id="sinhin">
+                <button class="btn trig-btn btn-light trigono-h-inv d-none" id="sinhin" data-input="sinhin">
                   sinh <sup>-1</sup>
                 </button>
-                <button class="btn trig-btn btn-light d-none" id="sinh">
+                <button class="btn trig-btn btn-light trigono-h-btn d-none" id="sinh" data-input="sinh">
                   sinh
                 </button>
-                <button class="btn trig-btn btn-light" id="cos">
+                <button class="btn trig-btn btn-light trigono-btn trigono-h-btn" id="cos" data-input="cos">
                   cos
                 </button>
-                <button class="btn trig-btn btn-light d-none" id="cosin">
+                <button class="btn trig-btn btn-light trigono-btn trigono-h-inv d-none" id="cosin" data-input="cosin">
                   cos <sup>-1</sup>
                 </button>
-                <button class="btn trig-btn btn-light d-none" id="coshin">
+                <button class="btn trig-btn btn-light trigono-h-inv d-none" id="coshin" data-input="coshin">
                   cosh <sup>-1</sup>
                 </button>
-                <button class="btn trig-btn btn-light d-none" id="cosh">
+                <button class="btn trig-btn btn-light trigono-h-btn d-none" id="cosh" data-input="cosh">
                   cosh
                 </button>
-                <button class="btn trig-btn btn-light" id="tan">
+                <button class="btn trig-btn btn-light trigono-btn trigono-h-btn" id="tan" data-input="tan">
                   tan
                 </button>
-                <button class="btn trig-btn btn-light d-none" id="tanin">
+                <button class="btn trig-btn btn-light trigono-btn trigono-h-inv d-none" id="tanin" data-input="tanin">
                   tan <sup>-1</sup>
                 </button>
-                <button class="btn trig-btn btn-light d-none" id="tanhin">
+                <button class="btn trig-btn btn-light trigono-h-inv d-none" id="tanhin" data-input="tanhin">
                   tanh <sup>-1</sup>
                 </button>
-                <button class="btn trig-btn btn-light d-none" id="tanh">
+                <button class="btn trig-btn btn-light trigono-h-btn d-none" id="tanh" data-input="tanh">
                   tanh
                 </button>
               </li>
               <!--Hyp button area-->
               <li class="d-flex justify-content-center">
-                <button class="btn trig-btn btn-light" id="hyp">
+                <button class="btn trig-btn btn-light" id="hyp" data-input="hyp">
                   hyp
                 </button>
-                <button class="btn trig-btn btn-light" id="sec">
+                <button class="btn trig-btn btn-light trigono-btn trigono-h-btn" id="sec" data-input="sec">
                   sec
                 </button>
-                <button class="btn trig-btn btn-light d-none" id="secin">
+                <button class="btn trig-btn btn-light trigono-btn trigono-h-inv d-none" id="secin" data-input="secin">
                   sec <sup>-1</sup>
                 </button>
-                <button class="btn trig-btn btn-light d-none" id="sechin">
+                <button class="btn trig-btn btn-light trigono-h-inv d-none" id="sechin" data-input="sechin">
                   sech <sup>-1</sup>
                 </button>
-                <button class="btn trig-btn btn-light d-none" id="sech">
+                <button class="btn trig-btn btn-light trigono-h-btn d-none" id="sech" data-input="sech">
                   sech
                 </button>
-                <button class="btn trig-btn btn-light" id="csc">
+                <button class="btn trig-btn btn-light trigono-btn trigono-h-btn" id="csc" data-input="csc">
                   csc
                 </button>
-                <button class="btn trig-btn btn-light d-none" id="cscin">
+                <button class="btn trig-btn btn-light trigono-btn trigono-h-inv d-none" id="cscin" data-input="cscin">
                   csc <sup>-1</sup>
                 </button>
-                <button class="btn trig-btn btn-light d-none" id="cschin">
+                <button class="btn trig-btn btn-light trigono-h-inv d-none" id="cschin" data-input="cschin">
                   csch <sup>-1</sup>
                 </button>
-                <button class="btn trig-btn btn-light d-none" id="csch">
+                <button class="btn trig-btn btn-light trigono-h-btn d-none" id="csch" data-input="csch">
                   csch
                 </button>
-                <button class="btn trig-btn btn-light" id="cot">
+                <button class="btn trig-btn btn-light trigono-btn trigono-h-btn" id="cot" data-input="cot">
                   cot
                 </button>
-                <button class="btn trig-btn btn-light d-none" id="cotin">
+                <button class="btn trig-btn btn-light trigono-btn trigono-h-inv d-none" id="cotin" data-input="cotin">
                   cot <sup>-1</sup>
                 </button>
-                <button class="btn  trig-btn btn-light d-none" id="cothin">
+                <button class="btn  trig-btn btn-light trigono-h-inv d-none" id="cothin" data-input="cothin">
                   coth <sup>-1</sup>
                 </button>
-                <button class="btn trig-btn btn-light d-none" id="coth">
+                <button class="btn trig-btn btn-light trigono-h-btn d-none" id="coth" data-input="coth">
                   coth
                 </button>
               </li>
@@ -158,7 +158,6 @@
               type="button"
               data-bs-toggle="dropdown"
               aria-expanded="false"
-              data-bs-auto-close="outside"
             >
               <img
                 src="./assets/function.png"
@@ -176,14 +175,14 @@
             </button>
             <div class="dropdown-menu p-0">
               <div class="d-flex">
-                <button class="btn fn-btn btn-light" id="fmodx">|x|</button>
-                <button class="btn fn-btn btn-light" id="fmodxl">⎣x⎦</button>
-                <button class="btn fn-btn btn-light" id="fmodxu">⎡x⎤</button>
+                <button class="btn fn-btn btn-light" id="fmodx" onclick="findMod()">|x|</button>
+                <button class="btn fn-btn btn-light" id="fmodxl" onclick="findLX()">⎣x⎦</button>
+                <button class="btn fn-btn btn-light" id="fmodxu" onclick="findInvertLX()">⎡x⎤</button>
               </div>
               <div class="d-flex">
-                <button class="btn fn-btn btn-light" id="frand">rand</button>
-                <button class="btn fn-btn btn-light" id="fdms">&#8594;dms</button>
-                <button class="btn fn-btn btn-light " id="fdeg">&#8594;deg</button>
+                <button class="btn fn-btn btn-light" id="frand" onclick="findRand()">rand</button>
+                <button class="btn fn-btn btn-light" id="fdms" onclick="findDMS()">&#8594;dms</button>
+                <button class="btn fn-btn btn-light " id="fdeg" onclick="findDEG()">&#8594;deg</button>
               </div>
             </div>
           </div>
@@ -192,9 +191,9 @@
          <!-- 2 pi e C clear-->
 
         <div class="d-flex justify-content-center">
-          <button class="btn cal-btn btn-light">2<sup>nd</sup></button>
-          <button class="btn cal-btn btn-light">π</button>
-          <button class="btn cal-btn btn-light">e</button>
+          <button class="btn cal-btn btn-light" data-input="2nd">2<sup>nd</sup></button>
+          <button class="btn cal-btn btn-light" data-input="π">π</button>
+          <button class="btn cal-btn btn-light" data-input="e">e</button>
           <button class="btn cal-btn btn-light" onclick="clearText()" >C</button>
           <button class="btn cal-btn btn-light" onclick="removeLast()">
             <img src="./assets/clear.png" alt="clear" width="25px" id="del">
@@ -202,25 +201,28 @@
         </div>
          <!-- x^2 x^3 1/x |x| exp  mod-->
         <div class="d-flex justify-content-center">
-          <button class="btn cal-btn btn-light">x<sup>2</sup></button>
-          <button class="btn cal-btn btn-light">1/x</button>
-          <button class="btn cal-btn btn-light">|x|</button> 
+          <button class="btn cal-btn btn-light 2nd-toggle 2nd-btn-1" data-input="x2">x<sup>2</sup></button>
+          <button class="btn cal-btn btn-light 2nd-toggle   d-none" data-input="x3">x<sup>3</sup></button>
+          <button class="btn cal-btn btn-light" data-input="1/x">1/x</button>
+          <button class="btn cal-btn btn-light" onclick="findMod()">|x|</button> 
           <button class="btn cal-btn btn-light">exp</button>
-          <button class="btn cal-btn btn-light">
+          <button class="btn cal-btn btn-light" data-input="%">
             mod
           </button>
         </div>
         <!-- 2sqrtx 3sqrtx  (  )  n! /-->
         <div class="d-flex justify-content-center">
-          <button class="btn cal-btn btn-light" onclick="findSqrt()" ><sup>2</sup>&#8730;x</button>
-          <button class="btn cal-btn btn-light">(</button>
-          <button class="btn cal-btn btn-light">)</button> 
-          <button class="btn cal-btn btn-light">n!</button>
+          <button class="btn cal-btn btn-light 2nd-toggle 2nd-btn-1" onclick="findSqrt()" ><sup>2</sup>&#8730;x</button>
+          <button class="btn cal-btn btn-light 2nd-toggle   d-none" onclick="findThirdSqrt()" ><sup>3</sup>&#8730;x</button>
+          <button class="btn cal-btn btn-light" data-input="(">(</button>
+          <button class="btn cal-btn btn-light" data-input=")">)</button> 
+          <button class="btn cal-btn btn-light" data-input="!">n!</button>
           <button class="btn cal-btn btn-light arith-btn" data-input="/"> &#247;</button>
         </div>
         <!-- x^y 7 8 9 x -->
         <div class="d-flex justify-content-center">
-          <button class="btn cal-btn btn-light">x<sup>y</sup></button>
+          <button class="btn cal-btn btn-light 2nd-toggle 2nd-btn-1" data-input="x^">x<sup>y</sup></button>
+          <button class="btn cal-btn btn-light 2nd-toggle   d-none" data-input="rt">y&#8730;x</button>
           <button class="btn cal-btn btn-light num-btn" data-input="7">7</button>
           <button class="btn cal-btn btn-light num-btn" data-input="8">8</button> 
           <button class="btn cal-btn btn-light num-btn" data-input="9">9</button>
@@ -228,7 +230,8 @@
         </div>
         <!-- 10^x  2^x  4  5  6  - -->
         <div class="d-flex justify-content-center">
-          <button class="btn cal-btn btn-light">10<sup>x</sup></button>
+          <button class="btn cal-btn btn-light 2nd-toggle 2nd-btn-1" data-input="10^">10<sup>x</sup></button>
+          <button class="btn cal-btn btn-light 2nd-toggle   d-none" data-input="2^">2<sup>x</sup></button>
           <button class="btn cal-btn btn-light num-btn" data-input="4">4</button>
           <button class="btn cal-btn btn-light num-btn" data-input="5">5</button> 
           <button class="btn cal-btn btn-light num-btn" data-input="6">6</button>
@@ -236,7 +239,8 @@
         </div>
         <!-- log  logyx   1  2  3  + -->
         <div class="d-flex justify-content-center">
-          <button class="btn cal-btn btn-light">log</button>
+          <button class="btn cal-btn btn-light 2nd-toggle 2nd-btn-1" data-input="log">log</button>
+          <button class="btn cal-btn btn-light 2nd-toggle   d-none" data-input="log">log<sub>y</sub>x</button>
           <button class="btn cal-btn btn-light num-btn" data-input="1">1</button>
           <button class="btn cal-btn btn-light num-btn" data-input="2">2</button> 
           <button class="btn cal-btn btn-light num-btn" data-input="3">3</button>
@@ -244,11 +248,12 @@
         </div>
         <!-- ln   e^x   +/-   0   .   = -->
         <div class="d-flex justify-content-center">
-          <button class="btn cal-btn btn-light">ln</button>
+          <button class="btn cal-btn btn-light 2nd-toggle 2nd-btn-1" data-input="ln">ln</button>
+          <button class="btn cal-btn btn-light 2nd-toggle   d-none" data-input="e^">e<sup>x</sup></button>
           <button class="btn cal-btn btn-light">+/-</button>
           <button class="btn cal-btn btn-light num-btn" data-input="0">0</button> 
-          <button class="btn cal-btn btn-light">.</button>
-          <button class="btn cal-btn btn-light" onclick="CalculateValue()" >=</button>
+          <button class="btn cal-btn btn-light" onclick="AddDot()">.</button>
+          <button class="btn cal-btn btn-light" data-input="=">=</button>
         </div>
 
       </div>
