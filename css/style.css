@@ -24,7 +24,8 @@
 }
 
 .trig-btn,
-.fn-btn {
+#second-fn-Trigono,
+#hyp .fn-btn {
   text-align: center;
   height: 2.5rem;
   white-space: nowrap;

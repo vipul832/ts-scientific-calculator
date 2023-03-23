@@ -66,7 +66,7 @@
             <ul class="dropdown-menu p-0">
               <!--2nd trigonometry area-->
               <li class="d-flex justify-content-around">
-                <button class="btn trig-btn btn-light" id="second-fn-Trigono" data-input="second-fn-Trigono">
+                <button class="btn  btn-light" id="second-fn-Trigono" data-input="second-fn-Trigono">
                   2 <sup>nd</sup>
                 </button>
                 <button class="btn trig-btn btn-light trigono-btn trigono-h-btn" id="sin" data-input="sin">
@@ -108,7 +108,7 @@
               </li>
               <!--Hyp button area-->
               <li class="d-flex justify-content-center">
-                <button class="btn trig-btn btn-light" id="hyp" data-input="hyp">
+                <button class="btn btn-light" id="hyp" data-input="hyp">
                   hyp
                 </button>
                 <button class="btn trig-btn btn-light trigono-btn trigono-h-btn" id="sec" data-input="sec">
@@ -191,7 +191,7 @@
          <!-- 2 pi e C clear-->
 
         <div class="d-flex justify-content-center">
-          <button class="btn cal-btn btn-light" data-input="2nd">2<sup>nd</sup></button>
+          <button class="btn cal-btn btn-light" data-input="2nd">2<sup>nd</sup> </button>
           <button class="btn cal-btn btn-light" data-input="π">π</button>
           <button class="btn cal-btn btn-light" data-input="e">e</button>
           <button class="btn cal-btn btn-light" onclick="clearText()" >C</button>
@@ -216,12 +216,12 @@
           <button class="btn cal-btn btn-light 2nd-toggle   d-none" onclick="findThirdSqrt()" ><sup>3</sup>&#8730;x</button>
           <button class="btn cal-btn btn-light" data-input="(">(</button>
           <button class="btn cal-btn btn-light" data-input=")">)</button> 
-          <button class="btn cal-btn btn-light" data-input="!">n!</button>
+          <button class="btn cal-btn btn-light" onclick="findFact()">n!</button>
           <button class="btn cal-btn btn-light arith-btn" data-input="/"> &#247;</button>
         </div>
         <!-- x^y 7 8 9 x -->
         <div class="d-flex justify-content-center">
-          <button class="btn cal-btn btn-light 2nd-toggle 2nd-btn-1" data-input="x^">x<sup>y</sup></button>
+          <button class="btn cal-btn btn-light 2nd-toggle 2nd-btn-1" data-input="^">x<sup>y</sup></button>
           <button class="btn cal-btn btn-light 2nd-toggle   d-none" data-input="rt">y&#8730;x</button>
           <button class="btn cal-btn btn-light num-btn" data-input="7">7</button>
           <button class="btn cal-btn btn-light num-btn" data-input="8">8</button> 
@@ -239,8 +239,8 @@
         </div>
         <!-- log  logyx   1  2  3  + -->
         <div class="d-flex justify-content-center">
-          <button class="btn cal-btn btn-light 2nd-toggle 2nd-btn-1" data-input="log">log</button>
-          <button class="btn cal-btn btn-light 2nd-toggle   d-none" data-input="log">log<sub>y</sub>x</button>
+          <button class="btn cal-btn btn-light 2nd-toggle 2nd-btn-1" onclick="findLog()" >log</button>
+          <button class="btn cal-btn btn-light 2nd-toggle   d-none" data-input="logb">log<sub>y</sub>x</button>
           <button class="btn cal-btn btn-light num-btn" data-input="1">1</button>
           <button class="btn cal-btn btn-light num-btn" data-input="2">2</button> 
           <button class="btn cal-btn btn-light num-btn" data-input="3">3</button>
@@ -248,7 +248,7 @@
         </div>
         <!-- ln   e^x   +/-   0   .   = -->
         <div class="d-flex justify-content-center">
-          <button class="btn cal-btn btn-light 2nd-toggle 2nd-btn-1" data-input="ln">ln</button>
+          <button class="btn cal-btn btn-light 2nd-toggle 2nd-btn-1" onclick="findLn()">ln</button>
           <button class="btn cal-btn btn-light 2nd-toggle   d-none" data-input="e^">e<sup>x</sup></button>
           <button class="btn cal-btn btn-light">+/-</button>
           <button class="btn cal-btn btn-light num-btn" data-input="0">0</button> 
