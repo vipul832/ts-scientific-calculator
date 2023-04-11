@@ -9,18 +9,18 @@ const errorDisplay = document.getElementById("errorDisplay")!;
 //All number Tag
 const numBtn = document.querySelectorAll(".num-btn");
 
-for (let i of numBtn) {
-  i.addEventListener("click", (e) => {
+for (let i = 0; i < numBtn.length; i++) {
+  numBtn[i].addEventListener("click", (e: Event) => {
     let input = (<Element>e.target).closest("button")?.dataset.input;
     inputText.value += input;
   });
 }
 
 //All arithmetic Operators
-const arithBtn = document.querySelectorAll(".arith-btn");
+const arithBtn: NodeListOf<Element> = document.querySelectorAll(".arith-btn");
 
-for (let i of arithBtn) {
-  i.addEventListener("click", (e) => {
+for (let i = 0; i < arithBtn.length; i++) {
+  arithBtn[i].addEventListener("click", (e) => {
     let input = (<Element>e.target).closest("button")?.dataset.input;
     inputText.value += input;
   });
@@ -46,7 +46,7 @@ function findSqrt() {
     return;
   } else {
     let input = parseInt(curInput);
-    if (Number.isNaN(input)) {
+    if (isNaN(input)) {
       return;
     } else {
       let ans = Math.sqrt(input);
@@ -61,10 +61,10 @@ function findThirdSqrt() {
     return;
   } else {
     let input = parseInt(curInput);
-    if (Number.isNaN(input)) {
+    if (isNaN(input)) {
       return;
     } else {
-      let ans = Math.cbrt(input);
+      let ans = Math.pow(input, 1 / 3);
       inputText.value = String(ans);
     }
   }
@@ -94,16 +94,23 @@ function secondStatus(statue: boolean) {
   if (flag_hyp1 == true) {
     return;
   }
-
   let setbtn1 = "trigo-btn-1";
   let setbtn2 = "d-none";
-  Array.from(secondTrigo).map((btn) => {
+  for (let i = 0; i < secondTrigo.length; i++) {
+    let btn = secondTrigo[i];
     if (btn.classList.contains(setbtn1)) {
       btn.classList.toggle(setbtn2);
     } else {
       btn.classList.toggle(setbtn2);
     }
-  });
+  }
+  //   Array.from(secondTrigo).map((btn) => {
+  //     if (btn.classList.contains(setbtn1)) {
+  //       btn.classList.toggle(setbtn2);
+  //     } else {
+  //       btn.classList.toggle(setbtn2);
+  //     }
+  //   });
 }
 
 //hyp status
@@ -122,24 +129,26 @@ function hypstatus() {
     }
     let shbtn1 = "trigono-h-inv";
     let shbtn2 = "d-none";
-    Array.from(secondTrigoHinv).map((btn) => {
+    for (let i = 0; i < secondTrigoHinv.length; i++) {
+      let btn = secondTrigoHinv[i];
       if (btn.classList.contains(shbtn1)) {
         btn.classList.toggle(shbtn2);
       } else {
         btn.classList.toggle(shbtn2);
       }
-    });
+    }
   } else {
     flag_hyp = false;
     let shbtn1 = "trigono-h-btn";
     let shbtn2 = "d-none";
-    Array.from(secondTrigoH).map((btn) => {
+    for (let i = 0; i < secondTrigoH.length; i++) {
+      let btn = secondTrigoH[i];
       if (btn.classList.contains(shbtn1)) {
         btn.classList.toggle(shbtn2);
       } else {
         btn.classList.toggle(shbtn2);
       }
-    });
+    }
   }
 }
 
@@ -156,7 +165,7 @@ function findMod() {
 //findLx() function
 function findLX() {
   let f = parseFloat(inputText.value);
-  if (Number.isNaN(f)) {
+  if (isNaN(f)) {
     return;
   } else {
     inputText.value = String(Math.floor(f));
@@ -166,7 +175,7 @@ function findLX() {
 //findInvertLX() function
 function findInvertLX() {
   let c = parseFloat(inputText.value);
-  if (Number.isNaN(c)) {
+  if (isNaN(c)) {
     return;
   } else {
     inputText.value = String(Math.ceil(c));
@@ -187,7 +196,7 @@ function findRand() {
 function findDMS() {
   if (obj.deg == "true") {
     let dd = parseFloat(inputText.value);
-    if (Number.isNaN(dd)) {
+    if (isNaN(dd)) {
       return;
     } else {
       let d = Math.floor(dd);
@@ -205,7 +214,7 @@ function findDEG() {
     return;
   } else if (obj.rad == "true") {
     let rvalue = parseFloat(inputText.value);
-    if (Number.isNaN(rvalue)) {
+    if (isNaN(rvalue)) {
       return;
     } else {
       let ans = rvalue * (Math.PI / 180);
@@ -213,7 +222,7 @@ function findDEG() {
     }
   } else {
     let gvalue = parseFloat(inputText.value);
-    if (Number.isNaN(gvalue)) {
+    if (isNaN(gvalue)) {
       return;
     } else {
       let ans = gvalue * 0.9;
@@ -261,8 +270,8 @@ enableMemoryBtn();
 // **********************  MAIN SWITCH CASE **************************
 let result: number | string,
   msarr: number[] = [];
-for (let btn of allBtn) {
-  btn.addEventListener("click", (e) => {
+for (let btn = 0; btn < allBtn.length; btn++) {
+  allBtn[btn].addEventListener("click", (e: Event) => {
     let input = (<Element>e.target).closest("button")?.dataset.input;
     switch (input) {
       case "unit":
@@ -279,7 +288,7 @@ for (let btn of allBtn) {
           return;
         }
         let ex = inputText.value;
-        console.log(ex);
+        //console.log(ex);
         inputText.value = parseFloat(ex).toExponential();
         break;
       case "mc":
@@ -295,14 +304,14 @@ for (let btn of allBtn) {
         break;
       case "m+":
         let cur = parseInt(localStorage.getItem("storenum")!);
-        if (Number.isNaN(cur)) {
+        if (isNaN(cur)) {
           return;
         } else {
           let add = parseInt(inputText.value);
-          if (Number.isNaN(add)) {
+          if (isNaN(add)) {
             return;
           } else {
-            console.log(cur + add);
+            //console.log(cur + add);
             localStorage.setItem("storenum", String(cur + add));
             enableMemoryBtn();
           }
@@ -310,7 +319,7 @@ for (let btn of allBtn) {
         break;
       case "m-":
         let curnum = parseInt(inputText.value);
-        if (Number.isNaN(curnum)) {
+        if (isNaN(curnum)) {
           return;
         } else {
           let sup = parseInt(localStorage.getItem("storenum")!) - curnum;
@@ -319,12 +328,12 @@ for (let btn of allBtn) {
         }
         break;
       case "ms":
-        console.log(msarr);
+        //console.log(msarr);
         if (inputText.value == "") {
           return;
         } else {
           let num = Number(inputText.value);
-          if (Number.isNaN(num)) {
+          if (isNaN(num)) {
             return;
           } else {
             msarr.push(Number(inputText.value));
@@ -342,36 +351,26 @@ for (let btn of allBtn) {
         result = 2.7182;
         break;
       case "2nd":
-        console.log(e.target);
         btnColorHandler(e.target as Element);
         let secBtn1 = "2nd-btn-1";
         let secBtn2 = "d-none";
-        Array.from(secondBtn).map((btn) => {
+        for (let i = 0; i < secondBtn.length; i++) {
+          let btn = secondBtn[i];
           if (btn.classList.contains(secBtn1)) {
             btn.classList.toggle(secBtn2);
           } else {
             btn.classList.toggle(secBtn2);
           }
-        });
+        }
         break;
       case "hyp":
         btnColorHandler(e.target as Element);
         hypstatus();
         break;
       case "^2":
-        // if (inputText.value.length == 0) {
-        //   return;
-        // }
-        // let temp = parseFloat(inputText.value);
-        // inputText.value = String(expower(temp, 2));
         inputText.value += "^2";
         break;
       case "^3":
-        // if (inputText.value.length == 0) {
-        //   return;
-        // }
-        // let temp1 = parseFloat(inputText.value);
-        // inputText.value = String(expower(temp1, 3));
         inputText.value += "^3";
         break;
       case "1/x":
@@ -416,8 +415,9 @@ for (let btn of allBtn) {
 function tokenize(s: string) {
   const r = [];
   let token = "";
-  for (const character of s) {
-    if ("^*/+-()%".includes(character)) {
+  for (let i = 0; i < s.length; i++) {
+    let character = s[i];
+    if (/[\^|*|\/|+|\-|(|)|%|]/.test(character)) {
       if (token === "" && character === "-") {
         token = "-";
       } else {
@@ -469,9 +469,10 @@ function calculate(tokens: (string | number)[]) {
     tokens = newTokens;
   }
   if (tokens.length > 1) {
-    console.log("Error: unable to resolve calculation");
+    //console.log("Error: unable to resolve calculation", tokens);
     return tokens;
   } else {
+    //console.log(tokens);
     return tokens[0];
   }
 }
@@ -490,7 +491,7 @@ function expower(num: number, pow: number) {
 
 function findFact() {
   let inputValue = parseInt(inputText.value);
-  if (Number.isNaN(inputValue)) {
+  if (isNaN(inputValue)) {
     return;
   } else {
     let sum = 1;
@@ -505,7 +506,7 @@ function findFact() {
 
 function findLog() {
   let inputValue = parseInt(inputText.value);
-  if (Number.isNaN(inputValue)) {
+  if (isNaN(inputValue)) {
     return;
   } else {
     let ans = Math.log10(inputValue);
@@ -515,7 +516,7 @@ function findLog() {
 
 function findLn() {
   let inputValue = parseInt(inputText.value);
-  if (Number.isNaN(inputValue)) {
+  if (isNaN(inputValue)) {
     return;
   } else {
     let ans = Math.log10(inputValue) * 2.303;
@@ -525,10 +526,10 @@ function findLn() {
 
 // Trigonometry
 
-const trigoBtn = document.getElementsByClassName("trig-btn");
+const trigoBtn = document.querySelectorAll(".trig-btn");
 
-for (let i of trigoBtn) {
-  i.addEventListener("click", (e) => {
+for (let i = 0; i < trigoBtn.length; i++) {
+  trigoBtn[i].addEventListener("click", (e: Event) => {
     let input = (<Element>e.target).closest("button")?.dataset.input;
     inputText.value += input;
   });
@@ -566,25 +567,25 @@ const trigoprator = [
 function trigohandle(inputText: string) {
   let str = inputText;
   let trigof = inputText.replace(/[^A-Za-z]/g, "");
-  console.log(trigof);
+  //console.log("tri", trigof);
   let num = parseInt(inputText.split(trigof)[1]);
-  if (Number.isNaN(num)) {
+  if (isNaN(num)) {
     return;
   } else {
     num = covertUnit(num);
-    console.log("value:", num);
-    console.log(handleTrigoFunction(str, num));
+    //console.log("value:", num);
+    handleTrigoFunction(str, num);
   }
 }
 
 function covertUnit(value: number) {
   if (obj["deg"] == "true") {
     value = (value * Math.PI) / 180;
-    console.log("Deg to radian", value);
+    //console.log("Deg to radian", value);
     return value;
   } else if (obj["grad"] == "true") {
     value = value * 0.015708;
-    console.log("grad to radian", value);
+    //console.log("grad to radian", value);
     return value;
   } else {
     return value;
@@ -593,17 +594,17 @@ function covertUnit(value: number) {
 
 function handleTrigoFunction(text: string, value: number) {
   let x = text.replace(/[^A-Za-z]/g, "");
-  if (text.match(/^sin/i)) {
+  if (text.match(/sin/i)) {
     handleSin(x, value);
-  } else if (text.match(/^cos/i)) {
+  } else if (text.match(/cos/i)) {
     handleCos(x, value);
-  } else if (text.match(/^tan/i)) {
+  } else if (text.match(/tan/i)) {
     handleTan(x, value);
-  } else if (text.match(/^sec/i)) {
+  } else if (text.match(/sec/i)) {
     handleSec(x, value);
-  } else if (text.match(/^csc/i)) {
+  } else if (text.match(/csc/i)) {
     handleCosec(x, value);
-  } else if (text.match(/^cot/i)) {
+  } else if (text.match(/cot/i)) {
     handleCot(x, value);
   }
 }
@@ -613,20 +614,20 @@ function handleTrigoFunction(text: string, value: number) {
 function handleSin(text: string, value: number) {
   switch (text) {
     case "sin":
-      console.log("sin");
+      // console.log("sin");
       inputText.value = String(Math.sin(value));
       break;
     case "sinin":
-      console.log("sin in");
+      // console.log("sin in");
       inputText.value = String(Math.asin(value));
       break;
     case "sinh":
-      console.log("sin h");
-      inputText.value = String(Math.sinh(value));
+      //console.log("sin h");
+      inputText.value = String((Math.exp(value) - Math.exp(-value)) / 2);
       break;
     case "sinhin":
-      console.log("sin h in");
-      inputText.value = String(Math.asinh(value));
+      // console.log("sin h in");
+      inputText.value = String(Math.log(value + Math.sqrt(value * value) + 1));
       break;
   }
 }
@@ -634,20 +635,20 @@ function handleSin(text: string, value: number) {
 function handleCos(text: string, value: number) {
   switch (text) {
     case "cos":
-      console.log("cos");
+      // console.log("cos");
       inputText.value = String(Math.cos(value));
       break;
     case "cosin":
-      console.log("cos in");
+      // console.log("cos in");
       inputText.value = String(Math.acos(value));
       break;
     case "cosh":
-      console.log("cos h");
-      inputText.value = String(Math.cosh(value));
+      //console.log("cos h");
+      inputText.value = String(Math.exp(value) + Math.exp(-value) / 2);
       break;
     case "coshin":
-      console.log("cos h in");
-      inputText.value = String(Math.acosh(value));
+      //console.log("cos h in");
+      inputText.value = String(Math.log(value + Math.sqrt(value * value - 1)));
       break;
   }
 }
@@ -655,20 +656,23 @@ function handleCos(text: string, value: number) {
 function handleTan(text: string, value: number) {
   switch (text) {
     case "tan":
-      console.log("tan");
+      // console.log("tan");
       inputText.value = String(Math.round(Math.tan(value)));
       break;
     case "tanin":
-      console.log("tan in");
+      // console.log("tan in");
       inputText.value = String(Math.atan(value));
       break;
     case "tanh":
-      console.log("tan h");
-      inputText.value = String(Math.tanh(value));
+      // console.log("tan h");
+      inputText.value = String(
+        (Math.exp(value) - Math.exp(-value)) /
+          (Math.exp(value) + Math.exp(-value))
+      );
       break;
     case "tanhin":
-      console.log("tan h in");
-      inputText.value = String(Math.atanh(value));
+      // console.log("tan h in");
+      inputText.value = String((0.5 * Math.log(1 + value)) / (1 - value));
       break;
   }
 }
@@ -676,20 +680,22 @@ function handleTan(text: string, value: number) {
 function handleSec(text: string, value: number) {
   switch (text) {
     case "sec":
-      console.log("sec");
+      // console.log("sec");
       inputText.value = String(1 / Math.cos(value));
       break;
     case "secin":
-      console.log("sec in");
+      // console.log("sec in");
       inputText.value = String(1 / Math.acos(value));
       break;
     case "sech":
-      console.log("sec h");
-      inputText.value = String(1 / Math.cosh(value));
+      // console.log("sec h");
+      inputText.value = String((Math.exp(value) + Math.exp(-value)) / 2);
       break;
     case "sechin":
-      console.log("sec h in");
-      inputText.value = String(1 / Math.acosh(value));
+      // console.log("sec h in");
+      inputText.value = String(
+        1 / Math.log(value) + Math.sqrt(value * value) - 1
+      );
       break;
   }
 }
@@ -697,20 +703,22 @@ function handleSec(text: string, value: number) {
 function handleCosec(text: string, value: number) {
   switch (text) {
     case "csc":
-      console.log("cosec");
+      // console.log("cosec");
       inputText.value = String(1 / Math.sin(value));
       break;
     case "cscin":
-      console.log("cosec in");
+      // console.log("cosec in");
       inputText.value = String(1 / Math.asin(value));
       break;
     case "csch":
-      console.log("cosec h");
-      inputText.value = String(1 / Math.sinh(value));
+      // console.log("cosec h");
+      inputText.value = String((Math.exp(value) - Math.exp(-value)) / 2);
       break;
     case "cschin":
-      console.log("cosec h in");
-      inputText.value = String(1 / Math.asinh(value));
+      //console.log("cosec h in");
+      inputText.value = String(
+        1 / (Math.log(value) + Math.sqrt(value * value) + 1)
+      );
       break;
   }
 }
@@ -718,20 +726,24 @@ function handleCosec(text: string, value: number) {
 function handleCot(text: string, value: number) {
   switch (text) {
     case "cot":
-      console.log("cot");
+      // console.log("cot");
       inputText.value = String(1 / Math.tan(value));
       break;
     case "cotin":
-      console.log("cot in");
+      // console.log("cot in");
       inputText.value = String(1 / Math.atan(value));
       break;
     case "coth":
-      console.log("cot h");
-      inputText.value = String(1 / Math.tanh(value));
+      // console.log("cot h");
+      inputText.value = String(
+        1 /
+          ((Math.exp(value) - Math.exp(-value)) /
+            (Math.exp(value) + Math.exp(-value)))
+      );
       break;
     case "cothin":
-      console.log("cot h in");
-      inputText.value = String(1 / Math.atanh(value));
+      // console.log("cot h in");
+      inputText.value = String(1 / ((0.5 * Math.log(1 + value)) / (1 - value)));
       break;
   }
 }
@@ -742,14 +754,14 @@ function cal_bracket(text: string) {
   if (typeof out === "number" || typeof out == "string") {
     return;
   }
-  console.log("out:", out);
+  // console.log("out:", out);
   let index: number;
   for (let i = 0; i < out.length; i++) {
     if (out[i] == "(") {
       index = i;
       while (out[index] != ")") {
         if (out[index] != "(") {
-          if (Number.isNaN(out[index])) {
+          if (isNaN(Number(out[index]))) {
             break;
           }
           solutionofB.push(Number(out[index]));
@@ -759,7 +771,7 @@ function cal_bracket(text: string) {
     }
   }
 
-  console.log("solution", solutionofB);
+  // console.log("solution", solutionofB);
   return solutionofB;
 }
 
@@ -767,29 +779,32 @@ function FinalCalculation() {
   if (inputText.value == "") {
     return;
   } else {
-    if (inputText.value.includes("sqrt")) {
+    if (/sqrt/.test(inputText.value)) {
+      // console.log("in 1");
       let rootArray = inputText.value.split("sqrt");
       let base = parseInt(rootArray[1]);
       let root = parseInt(rootArray[0]);
       inputText.value = String(Math.pow(base, 1 / root));
-    } else if (inputText.value.includes("log")) {
+    } else if (/log/.test(inputText.value)) {
+      // console.log("in 2");
       let lobArray = inputText.value.split("log");
       let base = parseInt(lobArray[0]);
       let root = parseInt(lobArray[1]);
       let ans = Math.log(root) / Math.log(base);
-      if (Number.isNaN(ans)) {
+      if (isNaN(ans)) {
         return;
       } else {
         inputText.value = String(ans);
       }
-    } else if (
-      trigoprator.includes(inputText.value.replace(/[^A-Za-z]/g, ""))
-    ) {
+    } else if (ChechTrigo(inputText.value.replace(/[^A-Za-z]/g, ""))) {
+      // console.log("in 3");
       trigohandle(inputText.value);
     } else if (/[+|\-|\/|*|^|(|)|%]/.test(inputText.value)) {
+      // console.log("in 4");
       let openBracket = 0,
         closeBracket = 0;
-      if (inputText.value.includes("(") || inputText.value.includes(")")) {
+      if (/[(]/.test(inputText.value) || /[)]/.test(inputText.value)) {
+        //  console.log("in barcket");
         let text = inputText.value;
         for (let i = 0; i < text.length; i++) {
           if (text[i] == "(") {
@@ -811,10 +826,10 @@ function FinalCalculation() {
           let valueofb = cal_bracket(teststr)!;
           let pretext,
             j = 0;
-          if (teststr.includes("π")) {
+          if (/[π]/.test(teststr)) {
             teststr = teststr.replaceAll("π", String(Math.PI));
           }
-          if (teststr.includes("e")) {
+          if (/[e]/.test(teststr)) {
             teststr = teststr.replaceAll("e", String(2.7182));
           }
 
@@ -826,12 +841,12 @@ function FinalCalculation() {
             teststr = pretext;
             j++;
           }
-          console.log("New String", teststr);
-          if (teststr.includes(")")) {
+          // console.log("New String", teststr);
+          if (/[)]/.test(teststr)) {
             teststr = teststr.replace(")", "");
           }
           let tempAns = calculate(tokenize(teststr));
-          if (Number.isNaN(tempAns)) {
+          if (isNaN(Number(tempAns))) {
             errorDisplay.innerText = "Invalid Input!";
             setTimeout(() => {
               errorDisplay.innerText = "";
@@ -845,15 +860,15 @@ function FinalCalculation() {
         }
       } else {
         let teststr = inputText.value;
-        if (teststr.includes("π")) {
+        if (/[π]/.test(teststr)) {
           teststr = teststr.replaceAll("π", String(Math.PI));
         }
-        if (teststr.includes("e")) {
+        if (/[e]/.test(teststr)) {
           teststr = teststr.replaceAll("e", String(2.7182));
         }
         result = String(calculate(tokenize(teststr)));
-        if (result == undefined || Number.isNaN(Number(result))) {
-          console.log("invalid Input");
+        if (result == undefined || isNaN(Number(result))) {
+          // console.log("invalid Input");
           errorDisplay.innerText = "Invalid Input!";
           setTimeout(() => {
             errorDisplay.innerText = "";
@@ -863,6 +878,7 @@ function FinalCalculation() {
         inputText.value = String(result);
       }
     } else {
+      //  console.log("in 5");
       if (result) {
         inputText.value = String(result);
         result = 0;
@@ -914,4 +930,25 @@ function enableMemoryBtn() {
     mcbtn.disabled = false;
     mrbtn.disabled = false;
   }
+}
+
+declare interface Math {
+  log10(x: number): number;
+}
+
+interface String {
+  replaceAll(input: string, output: string): string;
+}
+
+function ChechTrigo(x: string) {
+  let ans: boolean = false;
+  for (let i = 0; i < trigoprator.length; i++) {
+    if (trigoprator[i] == x) {
+      ans = true;
+      break;
+    } else {
+      ans = false;
+    }
+  }
+  return ans;
 }
