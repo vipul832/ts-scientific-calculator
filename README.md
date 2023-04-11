@@ -1,5 +1,5 @@
-# ![icons8-calculator-28](https://user-images.githubusercontent.com/122254160/227201241-3d713958-ce79-4345-8b8e-f732eb9ed720.png)  Scientific Calculator Using TypeScript ![typescript-22](https://user-images.githubusercontent.com/122254160/225262064-ef7a65d1-1b86-40b9-bd93-ace56cb0025f.png)
-## ![icons8-programming-flag-28](https://user-images.githubusercontent.com/122254160/227199765-15b1bd41-2e39-4103-a65c-f6f9e16bcf47.png) **Technology used in project**
+# Scientific Calculator ![typescript-22](https://user-images.githubusercontent.com/122254160/225262064-ef7a65d1-1b86-40b9-bd93-ace56cb0025f.png)
+## **Technology used in project**
 ![My Skills](https://skillicons.dev/icons?i=html,css,bootstrap,js,typescript)
 
 
@@ -9,10 +9,14 @@
 ## **What is typescript**
 - TypeScript is a free and open source high-level programming language developed and maintained by Microsoft. It is a strict syntactical superset of JavaScript and adds optional static typing to the language. It is designed for the development of large applications and transpiles to JavaScript. 
 
-# Information About pull request
-In this pull request i add hole scientific calculator without using eval function.Below i have mention all the feature and Instruction how to use the Scientific calculator in you local pc.
-
-### Feature
+## **Installation and StepUp**
+  - To install Typescript in local system Follow the Step given Below:
+    - **Step 1:** First we have to install Node js [Download](https://nodejs.org/en/download). if you have alread have then skip Step 1.
+    - **Step 2:** Use Command ```  npm install typescript@latest -g  ``` this command install the typescript compiler to check version of it use command ``` tsc -v```.
+    - **Step 3:** Now you have to setup a config file of Typescript for that use command ``` tsc --init``` this command create config file and then later on you can set as per your requirement.
+    - **Step 4:** To compile you Typescript file use command ``` tsc filename ```. Make sure are in same directory other wise to add path of file.
+  
+## Feature
 
 - ### Memory Storage
   - You can store value and then do operation on it and Recall. 
