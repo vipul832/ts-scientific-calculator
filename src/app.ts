@@ -575,6 +575,7 @@ function trigohandle(inputText: string) {
     num = covertUnit(num);
     //console.log("value:", num);
     handleTrigoFunction(str, num);
+
   }
 }
 
